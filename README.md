@@ -7,10 +7,10 @@ This is the challenge for DPS. I have built and deployed AI models in VERTEX AI.
 
 ##These are the steps followed in the process
 
-#Step 1
+# Step 1
 To create an account in Google Cloud Console and set up the billing account.
 
-#Step 2
+# Step 2
 Create a new project. Give the project a unique name. And once the project is launched, open the cloud console and authorize yourself using "gloud auth list" command.
 ![image](https://user-images.githubusercontent.com/63927839/137310775-c72a33f5-4538-4515-85d8-1e83674e1024.png)
 
@@ -21,12 +21,12 @@ and set your project using "gcloud config set project <unique-project-id>"
   
 Cloud Shell has a few environment variables, including GOOGLE_CLOUD_PROJECT which contains the name of our current Cloud project. We'll use this in various places throughout this lab. You can see it by running "echo $GOOGLE_CLOUD_PROJECT"
   
-  #Step 3
+  # Step 3
   Enable APIs
   In later steps, you'll see where these services are needed (and why), but for now, run this command to give your project access to the Compute Engine, Container Registry, and Vertex AI services
   ![image](https://user-images.githubusercontent.com/63927839/137311275-c65d0b69-6b3e-452d-a893-40084b957430.png)
 
-  #Step 4
+  # Step 4
   Create a Cloud Storage Bucket
   To run a training job on Vertex AI, we'll need a storage bucket to store our saved model assets. Run the following commands in your Cloud Shell terminal to create a bucket:
  " BUCKET_NAME=gs://$GOOGLE_CLOUD_PROJECT-bucket"
@@ -37,11 +37,11 @@ Cloud Shell has a few environment variables, including GOOGLE_CLOUD_PROJECT whic
   ![image](https://user-images.githubusercontent.com/63927839/137311469-5d6ed01a-c421-4388-b004-f3ec93d3e003.png)
 ![image](https://user-images.githubusercontent.com/63927839/137311523-e491a9a4-53f5-4276-ab87-26ba91dc6b0a.png)
 
-  #Step 5
+  # Step 5
   Set Alias for python using the following command
   ![image](https://user-images.githubusercontent.com/63927839/137311769-e5190b31-0f1e-4289-b9d7-05e7f99b2c88.png)
 
-  #Step 6
+  # Step 6
   Containerize the code 
   To start, from the terminal in Cloud Shell, run the following commands to create the files we'll need for our Docker Container:
   
@@ -72,21 +72,21 @@ Cloud Shell has a few environment variables, including GOOGLE_CLOUD_PROJECT whic
 FROM gcr.io/deeplearning-platform-release/tf2-cpu.2-3
 WORKDIR /
 
-# Copies the trainer code to the docker image.
+#Copies the trainer code to the docker image.
 COPY trainer /trainer
 
-# Sets up the entry point to invoke the trainer.
+#Sets up the entry point to invoke the trainer.
 ENTRYPOINT ["python", "-m", "trainer.train"]
   
   This Dockerfile uses the Deep Learning Container TensorFlow Enterprise 2.3 Docker image. The Deep Learning Containers on Google Cloud come with many common ML and data science frameworks pre-installed. The one we're using includes TF Enterprise 2.3, Pandas, Scikit-learn, and others. After downloading that image, this Dockerfile sets up the entrypoint for our training code, which we'll add in the next step.
   
   
-  #Step 7 
+  # Step 7 
   Add the custom model code in train.py. Check the code of train.py file for this.
   Once you've copied the code above into the mpg/trainer/train.py file, return to the Terminal in your Cloud Shell and run the following command to add your own bucket name to     the file:
   "sed -i "s|BUCKET_NAME|$BUCKET_NAME|g" trainer/train.py"
   
-  #Step 8
+  # Step 8
    Build and test the container locally
   From your Terminal, run the following to define a variable with the URI of your container image in Google Container Registry:
 
@@ -105,7 +105,7 @@ docker push $IMAGE_URI
   To verify your image was pushed to Container Registry, you should see something like this when you navigate to the Container Registry section of your console:
   ![image](https://user-images.githubusercontent.com/63927839/137312445-dd4e8dff-5738-414e-a490-84ee5dc60973.png)
   
-  #Step 9
+  # Step 9
   Run a training job on Vertex AI. This step takes 15 minutes approximately.
   Vertex gives you two options for training models:
 
@@ -146,7 +146,7 @@ Under the Prediction container step, select No prediction container:
   ![image](https://user-images.githubusercontent.com/63927839/137312840-3e778bd8-8972-4498-9725-c09154511033.png)
 
   
-  #Step 10
+  # Step 10
   Deploy a model endpoint.This takes approximately 10 mins.
   Here we'll be using the Vertex AI SDK to create a model, deploy it to an endpoint, and get a prediction.
   ###Install Vertex SDK
@@ -184,7 +184,7 @@ endpoint = model.deploy(
 Endpoint model deployed. Resource name: projects/your-project-id/locations/us-central1/endpoints/your-endpoint-id
   
   
-  #Step 11
+  # Step 11
   Get predictions on the deployed endpoint. 
   In your Cloud Shell editor, create a new file called predict.py:
   ![image](https://user-images.githubusercontent.com/63927839/137313537-ad3d4c2d-1387-423d-8444-3968a8260459.png)
