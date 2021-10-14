@@ -196,6 +196,8 @@ Endpoint model deployed. Resource name: projects/your-project-id/locations/us-ce
   
   Now it's time to run the predict.py file to get a prediction from our deployed model endpoint:
   python3 predict.py
+  # Result is shown in the cloud shell
+  # Predicted MPG:  17.07827
   
   ![image](https://user-images.githubusercontent.com/63927839/137313778-55130e08-2050-414d-ab00-c92a8934b97d.png)
 
