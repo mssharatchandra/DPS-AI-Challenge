@@ -201,8 +201,8 @@ Endpoint model deployed. Resource name: projects/your-project-id/locations/us-ce
 
   You should see the API's response logged, along with the predicted fuel efficiency for our test prediction.
   ![image](https://user-images.githubusercontent.com/63927839/137313895-cbd935ae-f20e-447a-a1d4-b7c891ac3960.png)
-#🎉 Congratulations! 🎉
-  You have successfully implemented an end-to-end machine learning workflow using Google Vertex 
+# 🎉 Congratulations! 🎉
+ ## You have successfully implemented an end-to-end machine learning workflow using Google Vertex 
   
   After your use, please clean up the deployement by undeploying it.
   
