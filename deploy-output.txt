@@ -1,0 +1,13 @@
+INFO:google.cloud.aiplatform.models:Creating Model
+INFO:google.cloud.aiplatform.models:Create Model backing LRO: projects/54610396705/locations/us-central1/models/6878395209785278464/operations/6370649673610297344
+INFO:google.cloud.aiplatform.models:Model created. Resource name: projects/54610396705/locations/us-central1/models/6878395209785278464
+INFO:google.cloud.aiplatform.models:To use this Model in another session:
+INFO:google.cloud.aiplatform.models:model = aiplatform.Model('projects/54610396705/locations/us-central1/models/6878395209785278464')
+INFO:google.cloud.aiplatform.models:Creating Endpoint
+INFO:google.cloud.aiplatform.models:Create Endpoint backing LRO: projects/54610396705/locations/us-central1/endpoints/7822761348835573760/operations/5105138178319187968
+INFO:google.cloud.aiplatform.models:Endpoint created. Resource name: projects/54610396705/locations/us-central1/endpoints/7822761348835573760
+INFO:google.cloud.aiplatform.models:To use this Endpoint in another session:
+INFO:google.cloud.aiplatform.models:endpoint = aiplatform.Endpoint('projects/54610396705/locations/us-central1/endpoints/7822761348835573760')
+INFO:google.cloud.aiplatform.models:Deploying model to Endpoint : projects/54610396705/locations/us-central1/endpoints/7822761348835573760
+INFO:google.cloud.aiplatform.models:Deploy Endpoint model backing LRO: projects/54610396705/locations/us-central1/endpoints/7822761348835573760/operations/2502057593699041280
+INFO:google.cloud.aiplatform.models:Endpoint model deployed. Resource name: projects/54610396705/locations/us-central1/endpoints/7822761348835573760
