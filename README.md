@@ -5,6 +5,14 @@ This is the challenge for DPS. I have built and deployed AI models in VERTEX AI.
 
 ### The predicted fuel efficiency of the given test_mpg array [1, 2, 3, 2, -2, -1, -2, -1, 0] is 17.07827
 
+# Video Explanation
+In this video, I tried summarizing the whole process of this project.
+
+
+https://user-images.githubusercontent.com/63927839/137320462-87188c27-00e9-4c76-ab9c-867797b7bc1d.mp4
+
+
+
 ##These are the steps followed in the process
 
 # Step 1
